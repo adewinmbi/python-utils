@@ -1,7 +1,8 @@
 # Brute force...
 # Print every possible caesar shift of a given string
+# For example, try: cvpbPGS{abg_gbb_onq_bs_n_ceboyrz}
 
-string = "cvpbPGS{abg_gbb_onq_bs_n_ceboyrz}"
+string = ""
 
 for i in range(0, 26): # 26 letters in alphabet
     dec = "" # Decoded string
@@ -9,7 +10,7 @@ for i in range(0, 26): # 26 letters in alphabet
         if ord(char) >= ord('a') and ord(char) <= ord('z'): # If the current character is lower case
             dec += chr((((ord(char) - ord('a')) + i) % 26) + ord('a')) # Modulo used to wrap around to the beginning
         elif ord(char) >= ord('A') and ord(char) <= ord('Z'): # If the character is capitalized
-            dec += chr(((ord(char) - ord('A') + 1) % 26) + ord('A'))
+            dec += chr(((ord(char) - ord('A') + i) % 26) + ord('A'))
         else:
             dec += char # If the character is not a letter
     print(dec)
